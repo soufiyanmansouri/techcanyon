@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TechCanyon
 
-## Getting Started
+Static fintech blog for **[techcanyon.online](https://techcanyon.online)** — six categories, Markdown posts, optional video player.
 
-First, run the development server:
+## Local
 
 ```bash
+cd /Users/soufiyan/develop/techcanyon
+cp .env.example .env.local
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Static build (Cloudflare Pages)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Output folder: **`out/`**
 
-## Learn More
+### Cloudflare Pages settings
 
-To learn more about Next.js, take a look at the following resources:
+| Setting | Value |
+|--------|--------|
+| Framework preset | Next.js (static) / None |
+| Build command | `npm run build` |
+| Build output directory | `out` |
+| Env var | `NEXT_PUBLIC_SITE_URL=https://techcanyon.online` |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Connect the Git repo, then add custom domain **techcanyon.online**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Add an article
 
-## Deploy on Vercel
+Create `content/posts/your-slug.md` with frontmatter (`title`, `slug`, `category`, `date`, `excerpt`) and push.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Optional:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```yaml
+video: https://example.com/video.mp4
+cover: https://images.unsplash.com/...
+```
+
+## External media (Site X → TechCanyon)
+
+Static watch page (client-side query param):
+
+```
+https://techcanyon.online/watch?v=https://site-x.com/file.mp4
+```
+
+Playback still requires the source to allow your domain (CORS / hotlink rules).
