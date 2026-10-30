@@ -41,6 +41,8 @@ export function BlogVideoPlayer({ src, poster, title, cors = false }: Props) {
       <MediaPlayer
         title={title ?? "Article video"}
         src={toPlayerSrc(src)}
+        autoPlay
+        muted
         playsInline
         crossOrigin={cors || undefined}
       >

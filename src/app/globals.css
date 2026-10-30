@@ -867,6 +867,14 @@ a:hover {
   background: #111;
 }
 
+.blog-player-frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: #111;
+}
+
 .article-layout {
   display: grid;
   gap: 2rem;

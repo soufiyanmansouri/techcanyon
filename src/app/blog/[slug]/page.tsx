@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
+import { ArticleMedia } from "@/components/ArticleMedia";
 import { PostList } from "@/components/PostList";
 import {
   formatPostDate,
@@ -84,26 +83,13 @@ async function BlogPostDetails({ params }: Props) {
       </div>
 
       <div className="site-wrap">
-        {!post.video ? (
-          <div className="article-cover cinematic">
-            <Image
-              src={post.coverImage}
-              alt={post.coverAlt}
-              fill
-              priority
-              sizes="100vw"
-              className="zoom-img"
-            />
-          </div>
-        ) : (
-          <div className="article-player-wrap">
-            <BlogVideoPlayer
-              src={post.video}
-              poster={post.poster || post.coverImage}
-              title={post.title}
-            />
-          </div>
-        )}
+        <ArticleMedia
+          title={post.title}
+          coverImage={post.coverImage}
+          coverAlt={post.coverAlt}
+          video={post.video}
+          poster={post.poster}
+        />
 
         <div className="article-layout">
           <div className="prose-body dropcap">
