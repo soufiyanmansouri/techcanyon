@@ -5,7 +5,6 @@ import { BrandMark } from "./BrandMark";
 const legalLinks = [
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
-  { href: "/advertise", label: "Advertise" },
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
   { href: "/cookies", label: "Cookies" },
@@ -22,12 +21,12 @@ export function Footer() {
             <p className="footer-brand">TechCanyon</p>
           </div>
           <p className="footer-blurb">
-            A photography-led fintech desk for decision-makers — and a clean,
-            trusted environment for partners who care where their brand sits.
+            Premium fintech coverage for operators and founders — a calm,
+            high-signal home for brands that care where they appear.
           </p>
         </div>
         <div>
-          <p className="footer-label">Desk</p>
+          <p className="footer-label">Coverage</p>
           <div className="footer-cats">
             {categories.map((cat) => (
               <Link key={cat.slug} href={`/categories/${cat.slug}`}>
@@ -37,7 +36,7 @@ export function Footer() {
           </div>
         </div>
         <div>
-          <p className="footer-label">Company &amp; legal</p>
+          <p className="footer-label">Company</p>
           <div className="footer-cats">
             {legalLinks.map((link) => (
               <Link key={link.href} href={link.href}>

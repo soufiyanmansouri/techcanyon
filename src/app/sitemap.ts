@@ -13,7 +13,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/categories",
     "/about",
     "/contact",
-    "/advertise",
     "/privacy",
     "/terms",
     "/cookies",

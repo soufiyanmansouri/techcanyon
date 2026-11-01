@@ -40,8 +40,11 @@ export default function AboutPage() {
       <h2>For brands</h2>
       <p>
         We design the Site as a premium environment where sponsorships can sit
-        beside trusted copy without clutter. Learn more on{" "}
-        <Link href="/advertise">Advertise</Link>.
+        beside trusted copy without clutter. Partnerships:{" "}
+        <a href="mailto:partners@techcanyon.online">
+          partners@techcanyon.online
+        </a>
+        .
       </p>
 
       <h2>Contact</h2>

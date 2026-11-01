@@ -58,8 +58,11 @@ export default function DisclaimerPage() {
       <p>
         The Site may display ads or sponsored placements. Sponsored content will
         be identified where required. Sponsorship does not change our obligation
-        to present this Disclaimer. See{" "}
-        <Link href="/advertise">Advertise</Link> for partner information.
+        to present this Disclaimer. Partner inquiries:{" "}
+        <a href="mailto:partners@techcanyon.online">
+          partners@techcanyon.online
+        </a>
+        .
       </p>
 
       <h2>7. Limitation of liability</h2>

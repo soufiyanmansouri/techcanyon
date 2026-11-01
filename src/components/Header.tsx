@@ -4,21 +4,12 @@ import { BrandMark } from "./BrandMark";
 
 const links = [
   { href: "/blog", label: "Stories" },
-  { href: "/categories", label: "Desk" },
+  { href: "/categories", label: "Coverage" },
 ];
 
 export function Header() {
   return (
     <header className="site-header">
-      <div className="edition-bar">
-        <div className="site-wrap edition-bar-inner">
-          <span>TechCanyon Daily</span>
-          <span className="edition-dot" aria-hidden />
-          <span>Vol. 01 · Fintech Desk</span>
-          <span className="edition-dot" aria-hidden />
-          <span>For readers &amp; brand partners</span>
-        </div>
-      </div>
       <div className="site-wrap header-inner">
         <Link href="/" className="brand">
           <BrandMark />
@@ -31,7 +22,7 @@ export function Header() {
             </Link>
           ))}
           <Link href="/blog" className="nav-cta">
-            Open the desk
+            Read latest
           </Link>
         </nav>
       </div>

@@ -1,13 +1,22 @@
 import type { Metadata } from "next";
-import { Syne, Newsreader, Source_Sans_3 } from "next/font/google";
+import { Sora, IBM_Plex_Sans, Newsreader } from "next/font/google";
+import Script from "next/script";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
 
-const display = Syne({
+const GA_MEASUREMENT_ID = "G-DCT7QMY1HR";
+
+const display = Sora({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700", "800"],
+});
+
+const body = IBM_Plex_Sans({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const editorial = Newsreader({
@@ -15,12 +24,6 @@ const editorial = Newsreader({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-});
-
-const body = Source_Sans_3({
-  variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -40,12 +43,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${display.variable} ${editorial.variable} ${body.variable} h-full antialiased`}
+      className={`${display.variable} ${body.variable} ${editorial.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="site-main">{children}</main>
         <Footer />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
       </body>
     </html>
   );

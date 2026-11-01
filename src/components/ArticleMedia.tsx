@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { BlogVideoPlayer } from "@/components/BlogVideoPlayer";
 import { DevtoolsRedirect } from "@/components/DevtoolsRedirect";
 import { ProtectContextMenu } from "@/components/ProtectContextMenu";
@@ -17,11 +17,18 @@ type Props = {
   poster?: string;
 };
 
+type Handoff = {
+  opaque: string;
+  override: string;
+};
+
 /**
  * Article hero media.
  * - `?p=` opaque Nova+ handoff → iframe (CDN URL stays off TechCanyon address bar)
  * - `?v=` legacy cleartext URL (manual tests only)
  * - else post front-matter video / cover
+ *
+ * Query overrides are read after mount so SSR HTML matches the first client paint.
  */
 export function ArticleMedia({
   title,
@@ -30,18 +37,24 @@ export function ArticleMedia({
   video,
   poster,
 }: Props) {
-  const searchParams = useSearchParams();
-  const opaque = searchParams.get("p")?.trim() ?? "";
-  const override = searchParams.get("v")?.trim() ?? "";
+  const [handoff, setHandoff] = useState<Handoff>({ opaque: "", override: "" });
 
-  if (opaque) {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setHandoff({
+      opaque: params.get("p")?.trim() ?? "",
+      override: params.get("v")?.trim() ?? "",
+    });
+  }, []);
+
+  if (handoff.opaque) {
     return (
       <ProtectContextMenu>
         <div className="article-player-wrap">
           <DevtoolsRedirect />
           <iframe
             title={title}
-            src={novaPlusEmbedPlayUrl(opaque)}
+            src={novaPlusEmbedPlayUrl(handoff.opaque)}
             className="blog-player-frame"
             allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
             allowFullScreen
@@ -53,7 +66,9 @@ export function ArticleMedia({
   }
 
   const playSrc =
-    override && isAllowedMediaUrl(override) ? override : video?.trim() || "";
+    handoff.override && isAllowedMediaUrl(handoff.override)
+      ? handoff.override
+      : video?.trim() || "";
 
   if (playSrc) {
     return (

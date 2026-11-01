@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -38,11 +37,6 @@ export default function ContactPage() {
           <a className="text-link" href="mailto:partners@techcanyon.online">
             partners@techcanyon.online
           </a>
-          <p className="excerpt" style={{ marginTop: "0.75rem" }}>
-            <Link href="/advertise" className="text-link">
-              View advertise page →
-            </Link>
-          </p>
         </div>
         <div className="rail-card">
           <p className="footer-label">Privacy &amp; legal</p>
