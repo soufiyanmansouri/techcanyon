@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   },
   description:
     "TechCanyon — a premium fintech publication on digital banking, payments, trading, insurtech, personal finance, and lending.",
+  verification: {
+    google: "fbkpZ6XMeSNv0ldsUX-OJ4GcoBsIW7MohciKqEO7HQg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
