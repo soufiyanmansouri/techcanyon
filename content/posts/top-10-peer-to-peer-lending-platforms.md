@@ -11,7 +11,7 @@ coverAlt: Peer-to-peer lending platforms
 
 P2P lending still sells a simple story: borrowers meet capital without a branch. Reality is risk grading, security packs, MiFID wrappers, and platform concentration. Below is a TechCanyon rewrite of a common Top 10 map spanning the US, UK, Ireland, and Europe.
 
-![P2P lending platforms](https://assets.bizclikmedia.net/1800/e002e67c2d0c6fe972301ba4b327cd74:51976e450e1ea28dec994a189977f13c/unnamed-15.jpg "Peer-to-peer lending platforms. Credit: FinTech Magazine")
+![Handshake over a lending discussion](https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80 "P2P marketplaces still match borrowers with capital outside the branch. Credit: Unsplash")
 
 ## The map
 

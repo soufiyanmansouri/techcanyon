@@ -13,7 +13,7 @@ Global checkout is no longer one processor and a hope. Merchants stitch together
 
 This TechCanyon briefing reframes a widely circulated industry ranking for operators who care about authorisation rates, cost-to-serve, and lock-in risk.
 
-![Top 10 payment orchestration platforms](https://assets.bizclikmedia.net/1800/7f343e7def404400fc87d237ecbde489:1fa931e4981f403510dbf4e606f72da1/9-fintech-top10-graphics-cms-2026.jpg "In association with Primer. Credit: FinTech Magazine / Primer")
+![Contactless payment at a retail checkout](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1400&q=80 "Merchants need routing across processors and local methods. Credit: Unsplash")
 
 ## Why orchestration exists
 

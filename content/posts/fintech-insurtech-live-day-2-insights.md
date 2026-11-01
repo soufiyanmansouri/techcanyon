@@ -11,7 +11,7 @@ coverAlt: FinTech and InsurTech Live event stage
 
 FinTech & InsurTech Live’s second day — sponsored by Saphyre — mixed central-bank pragmatism, insurer M&A math, payments ecosystems, and partnership hygiene. Here is a TechCanyon rewrite of the themes that still travel.
 
-![FinTech & InsurTech Live](https://assets.bizclikmedia.net/1800/8e0766d2aad26824ecf2242199e6a8af:0d668a74c2910777c6d5fc247d08e9fe/image00014-jpeg.webp "FinTech & InsurTech Live. Credit: FinTech Magazine / event photography")
+![Conference stage and audience](https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=80 "A packed second day of panels on AI, partnerships, and trust. Credit: Unsplash")
 
 ## Main-stage signals
 
