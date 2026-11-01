@@ -13,7 +13,7 @@ Revolut is moving into unsecured personal loans in the United Kingdom — a prod
 
 Francesca Carlesi, CEO of Revolut UK, has framed loans as one step toward making Revolut the everyday primary bank for UK customers. In comments to Reuters, she described a plan to sell much of the credit risk through securitisation and keep the loan-to-deposit ratio near about 6% — far below the roughly 100% ratio common at a traditional deposit-funded lender.
 
-![Francesca Carlesi, CEO of Revolut UK](https://assets.bizclikmedia.net/1800/037a0059a5efee9cdc04dc3e0fe9210c:95bbf858d9c014c06cedfd4ec135c188/1772442553440-e-1775088000-v-beta-t-tywwwnba6senvqgqv8lrt9dx24jmz5jao9jkhkhvjum "Francesca Carlesi, CEO of Revolut UK. Credit: LinkedIn")
+![Person reviewing loan and banking details on a laptop](https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1400&q=80 "UK personal loans are rolling out while Revolut keeps credit exposure light. Credit: Unsplash")
 
 ## What is launching
 

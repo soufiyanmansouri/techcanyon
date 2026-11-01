@@ -11,7 +11,7 @@ coverAlt: Top 10 crypto platforms graphic
 
 Crypto distribution still runs through a short list of venues. Market-size forecasts move, but the practical question for operators and users is which platforms hold liquidity, product breadth, and trust.
 
-![Top 10 crypto platforms](https://assets.bizclikmedia.net/1800/53029c604e7193c154f00ab687a8b4a6:81abaf622af8425e193a80e9be219dc5/fintech-top10-crypto-platforms.jpg "Top 10 crypto platforms. Credit: FinTech Magazine")
+![Bitcoin physical coin beside trading charts](https://images.unsplash.com/photo-1518546305927-5a555bb7020d?auto=format&fit=crop&w=1400&q=80 "Liquidity still concentrates in a short list of venues. Credit: Unsplash")
 
 Industry coverage around mid-2023 pointed to a crypto market near US$38bn with double-digit CAGR expectations into the later 2020s. Below is a TechCanyon rewrite of a common Top 10 exchange framing — facts retained, wording original.
 
