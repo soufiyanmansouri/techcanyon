@@ -13,6 +13,7 @@ export type PostMeta = {
   video?: string;
   poster?: string;
   cover?: string;
+  coverAlt?: string;
 };
 
 export type Post = PostMeta & {
@@ -44,7 +45,7 @@ function parsePost(filename: string): Post {
     content,
     categoryMeta,
     coverImage: meta.cover || categoryMeta?.image || siteFallbackCover,
-    coverAlt: categoryMeta?.imageAlt || meta.title,
+    coverAlt: meta.coverAlt || categoryMeta?.imageAlt || meta.title,
   };
 }
 

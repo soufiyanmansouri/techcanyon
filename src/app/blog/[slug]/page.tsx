@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
+import {
+  Children,
+  isValidElement,
+  type ComponentPropsWithoutRef,
+} from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArticleMedia } from "@/components/ArticleMedia";
@@ -18,6 +22,22 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+function MarkdownImage({
+  src,
+  alt,
+  title,
+}: ComponentPropsWithoutRef<"img">) {
+  const href = typeof src === "string" ? src : undefined;
+  if (!href) return null;
+  return (
+    <figure className="prose-figure">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={href} alt={alt || ""} loading="lazy" />
+      {title ? <figcaption>{title}</figcaption> : null}
+    </figure>
+  );
+}
+
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));
 }
@@ -32,15 +52,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function BlogPostPage({ params }: Props) {
-  return (
-    <Suspense fallback={<p className="muted site-wrap page-pad">Loading…</p>}>
-      <BlogPostDetails params={params} />
-    </Suspense>
-  );
-}
-
-async function BlogPostDetails({ params }: Props) {
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
   if (!post) notFound();
@@ -93,7 +105,24 @@ async function BlogPostDetails({ params }: Props) {
 
         <div className="article-layout">
           <div className="prose-body dropcap">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                // Markdown wraps lone images in <p>; figures cannot nest in <p>.
+                p: ({ children }) => {
+                  const items = Children.toArray(children).filter(
+                    (child) => !(typeof child === "string" && !child.trim()),
+                  );
+                  const onlyImage =
+                    items.length === 1 &&
+                    isValidElement(items[0]) &&
+                    items[0].type === MarkdownImage;
+                  if (onlyImage) return <>{items}</>;
+                  return <p>{children}</p>;
+                },
+                img: MarkdownImage,
+              }}
+            >
               {post.content}
             </ReactMarkdown>
           </div>

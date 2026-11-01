@@ -15,8 +15,8 @@ export default function BlogIndexPage() {
         <p className="eyebrow">Archive</p>
         <h1>Stories</h1>
         <p className="section-intro">
-          The full TechCanyon desk — photography-led, category-clear, newest
-          first.
+          The full TechCanyon archive — newest first, organized by coverage
+          lane.
         </p>
       </header>
       <PostList posts={posts} layout="row" grid />

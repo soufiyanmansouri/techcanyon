@@ -26,7 +26,7 @@ export function CategoryNav({ columns = "duo" }: { columns?: "duo" | "trio" }) {
             <span className="cat-copy">
               <span className="cat-name">{cat.name}</span>
               <span className="cat-desc">{cat.description}</span>
-              <span className="cat-enter">Enter desk →</span>
+              <span className="cat-enter">Explore →</span>
             </span>
           </Link>
         </li>
